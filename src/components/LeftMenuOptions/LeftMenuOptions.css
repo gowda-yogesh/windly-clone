@@ -1,0 +1,26 @@
+#lmo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.lmo-main-options {
+  border-radius: 50px;
+  padding: 0.3em 1em;
+  font-size: 18px;
+  color:#6b6b6b;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+}
+
+.lmo-main-options:hover {
+  background-color: #96d9ff;
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+
+.lmo-main-options:active {
+  background-color: red;
+} 
