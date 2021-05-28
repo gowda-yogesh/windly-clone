@@ -1,4 +1,13 @@
 body {
+  background-color: #EEE;
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 0px;
   margin: 0;
+  overflow: auto;
+  box-sizing: border-box;
 }
-
+ 
+/* #root li {
+  margin-bottom: 10px;
+} */

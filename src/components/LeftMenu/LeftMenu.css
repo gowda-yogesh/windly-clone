@@ -1,0 +1,57 @@
+#left-flyout-menu {
+  width: 20vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+  overflow: scroll;
+  z-index: 10000;
+}
+
+#left-flyout-menu.hide {
+  transform: translate3d(-100vw, 0, 0);
+}
+
+#left-flyout-menu.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+}
+
+/* #left-flyout-menu h2 a {
+  color: #333;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+#left-flyout-menu h2 a:hover {
+  text-decoration: underline;
+} */
+
+
+/* Common for both setting favourtite and menu  */
+.lmo-sub-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6b6b6b;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+}
+
+.lmo-sub-options:hover {
+  padding: 0px 1rem;
+  background-color: #96d9ff;
+  cursor: pointer;
+  transform: scale(1.04, 1.04);
+}
+
+.lmo-sub-options > p {
+  margin: 12px 0px;
+}
