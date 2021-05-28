@@ -48,7 +48,7 @@ class LeftMenu extends PureComponent {
 
         return (
             <div id="left-flyout-menu" className={visibility}>
-                <LeftMenuOptions handleToggleLeftMenu={this.props.handleToggleLeftMenu} handleLMOChange={this.handleLMOChange} />
+                <LeftMenuOptions handleToggleLeftMenu={this.props.handleToggleLeftMenu} handleLMOChange={this.handleLMOChange} leftMenuOptionsSelected={this.state.leftMenuOptionsSelected} />
                 {selection}
 
             </div>

@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { MapContainer, WMSTileLayer, } from "react-leaflet";
 import ErrorBoundry from "../ErrorBoundry/ErrorBoundry";
 import Title from '../../containers/Title/Title';
-import MenuButton from "../../containers/MenuButton/MenuButton"
+import LeftVisibleMenu from "../../containers/LeftVisibleMenu/LeftVisibleMenu"
 import LeftMenu from "../LeftMenu/LeftMenu"
 import RightVisibleMenu from "../RightVisibleMenu/RightVisibleMenu";
 import RightHiddenMenu from "../RightHiddenMenu/RightHiddenMenu"
@@ -18,6 +18,7 @@ class App extends PureComponent {
     this.state = {
       visible: false,
       rightHiddenMenuVisible: false,
+      selectedLocation: "Bangalore"
     };
   }
 
@@ -46,6 +47,13 @@ class App extends PureComponent {
     });
   };
 
+  handleSelectedLocation = (e) => {
+    console.log(e.target);
+    console.log(e.target.innerText);
+    // this.setState({ selectedLocation: e.target.value }, function () {
+    //   console.log(this.state.selectedLocation.toUpperCase());
+    // });
+  }
   render() {
     const wmsURL = "http://ows.mundialis.de/services/service?";
     const layerOption = "TOPO-OSM-WMS";
@@ -57,7 +65,7 @@ class App extends PureComponent {
       <>
         <ErrorBoundry>
           <div id="app-container">
-            <MenuButton handleToggleLeftMenu={this.handleToggleLeftMenu} />
+            <LeftVisibleMenu handleToggleLeftMenu={this.handleToggleLeftMenu} handleSelectedLocation={this.handleSelectedLocation} />
             <LeftMenu handleToggleLeftMenu={this.handleToggleLeftMenu}
               menuVisibility={this.state.visible} />
             <Title title="ISTRAC" />
@@ -68,7 +76,7 @@ class App extends PureComponent {
           <div id="map-container">
             <MapContainer
               center={[12.9716, 77.5946]}
-              zoom={5}
+              zoom={6}
               scrollWheelZoom={true}
             >
               <WMSTileLayer url={wmsURL} layers={layerOption}></WMSTileLayer>

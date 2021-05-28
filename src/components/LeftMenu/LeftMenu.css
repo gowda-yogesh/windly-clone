@@ -29,3 +29,29 @@
 #left-flyout-menu h2 a:hover {
   text-decoration: underline;
 } */
+
+
+/* Common for both setting favourtite and menu  */
+.lmo-sub-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6b6b6b;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+}
+
+.lmo-sub-options:hover {
+  padding: 0px 1rem;
+  background-color: #96d9ff;
+  cursor: pointer;
+  transform: scale(1.04, 1.04);
+}
+
+.lmo-sub-options > p {
+  margin: 12px 0px;
+}

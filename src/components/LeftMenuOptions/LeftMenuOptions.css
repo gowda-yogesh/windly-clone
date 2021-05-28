@@ -1,15 +1,19 @@
 #lmo-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.6rem;
+  /* flex-wrap: wrap; */
+  /* overflow: hidden; */
 }
 
 .lmo-main-options {
+  flex: 1;
   padding: 0.3em 1em;
   font-size: 18px;
-  color:#6b6b6b;
+  color: #6b6b6b;
   outline: none;
   transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
 }
@@ -20,6 +24,8 @@
   transform: scale(1.05, 1.05);
 }
 
-.lmo-main-options:active {
-  background-color: red;
-} 
+.active {
+  background-color: #96d9ff;
+  /* background-color: rgba(68, 65, 65, 0.84); */
+  /* color: aliceblue; */
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './MenuButton.css';
+import './LeftVisibleMenu.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import Search from "../Search/Search";
 
@@ -22,7 +22,7 @@ class MenuButton extends Component {
     }
 
     render() {
-        let filteredItem=[]
+        let filteredItem = []
         if (this.state.searchItemHomePage) {
             filteredItem = this.state.locationLonLat.filter((location) =>
                 location.toUpperCase().includes(this.state.searchItemHomePage.toUpperCase()));
@@ -35,13 +35,13 @@ class MenuButton extends Component {
             <div id="lvm-container">
                 <div id="lvm-button-search">
                     <MenuIcon id="lvm-show-button" onMouseDown={this.props.handleToggleLeftMenu} />
-                    <Search handleSearch={this.handleSearchHomePage}  className="lvm-search-bar"/>
+                    <Search handleSearch={this.handleSearchHomePage} className="lvm-search-bar" />
                 </div >
                 <nav id="lvm-search-location-results">
                     {filteredItem.map((location, index) => {
                         return (
-                            <div key={index}>
-                                <span>{location}</span>
+                            <div key={index} data-location={location} >
+                                <span onClick={this.props.handleSelectedLocation}>{location}</span>
                             </div>
                         );
                     })}

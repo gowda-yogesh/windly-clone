@@ -72,6 +72,7 @@
   justify-content: flex-start;
   align-items: center;
   color: aliceblue;
+  cursor: pointer;
 }
 
 #lvm-search-location-results > div > span {
