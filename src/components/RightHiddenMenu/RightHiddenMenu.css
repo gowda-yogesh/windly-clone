@@ -1,9 +1,9 @@
 #right-flyout-menu {
-  width: 22vw;
+  width: 16vw;
   height: 100vh;
   background-color: #565673;
   color: aliceblue;
-  font-size:12px;
+  font-size: 12px;
   padding: 20px;
   position: fixed;
   top: 0;
@@ -22,11 +22,23 @@
   overflow: hidden;
 }
 
-#rhm-all-layers > div{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    color: aliceblue;
+#rhm-all-layers {
+  margin-top: 1rem;
 }
+
+#rhm-all-layers > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: aliceblue;
+  padding: 10px 0px;
+}
+
+#rhm-all-layers > div > input {
+  margin-right: 0.2rem;
+}
+#rhm-all-layers > div > span {
+  margin: 0 0.6rem 0 0.2rem;
+}
+

@@ -36,8 +36,7 @@
 }
 
 #overlay > a :hover {
-  background-color: red;
-  /* background-color: rgba(68, 65, 65, 0.84); */
+  background-color: rgba(68, 65, 65, 0.84);
 }
 
 #overlay > a:first-of-type > div:nth-child(2) {

@@ -3,10 +3,12 @@ import "./App.css";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, WMSTileLayer, } from "react-leaflet";
 import ErrorBoundry from "../ErrorBoundry/ErrorBoundry";
+import Title from '../../containers/Title/Title';
 import MenuButton from "../../containers/MenuButton/MenuButton"
 import LeftMenu from "../LeftMenu/LeftMenu"
 import RightVisibleMenu from "../RightVisibleMenu/RightVisibleMenu";
 import RightHiddenMenu from "../RightHiddenMenu/RightHiddenMenu"
+// import ISROLogo from "../../assets/ISRO-logo.png"
 
 
 class App extends PureComponent {
@@ -15,9 +17,10 @@ class App extends PureComponent {
 
     this.state = {
       visible: false,
-      rightHiddenMenuVisible: false
+      rightHiddenMenuVisible: false,
     };
   }
+
 
   handleToggleLeftMenu = (e) => {
     this.toggleLeftMenu();
@@ -53,9 +56,15 @@ class App extends PureComponent {
     return (
       <>
         <ErrorBoundry>
-          <MenuButton handleToggleLeftMenu={this.handleToggleLeftMenu} />
-          <LeftMenu handleToggleLeftMenu={this.handleToggleLeftMenu}
-            menuVisibility={this.state.visible} />
+          <div id="app-container">
+            <MenuButton handleToggleLeftMenu={this.handleToggleLeftMenu} />
+            <LeftMenu handleToggleLeftMenu={this.handleToggleLeftMenu}
+              menuVisibility={this.state.visible} />
+            <Title title="ISTRAC" />
+            <RightVisibleMenu handleToggleRightHM={this.handleToggleRightHM} />
+            <RightHiddenMenu handleToggleRightHM={this.handleToggleRightHM}
+              menuVisibility={this.state.rightHiddenMenuVisible} />
+          </div>
           <div id="map-container">
             <MapContainer
               center={[12.9716, 77.5946]}
@@ -65,9 +74,6 @@ class App extends PureComponent {
               <WMSTileLayer url={wmsURL} layers={layerOption}></WMSTileLayer>
             </MapContainer>
           </div>
-          <RightVisibleMenu handleToggleRightHM={this.handleToggleRightHM} />
-          <RightHiddenMenu handleToggleRightHM={this.handleToggleRightHM}
-            menuVisibility={this.state.rightHiddenMenuVisible} />
         </ErrorBoundry>
       </>
     );
