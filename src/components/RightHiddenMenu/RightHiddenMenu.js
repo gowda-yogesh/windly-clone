@@ -10,7 +10,6 @@ class RightHiddenMenu extends PureComponent {
         this.state = {
             RHMOSelected: "list",
             searchItemRHM: "",
-            viewLayers: ["Q", "W", "R", "wearwr", "aaaaa"],
         };
     }
 
@@ -28,7 +27,7 @@ class RightHiddenMenu extends PureComponent {
             visibility = "show";
         }
 
-        const filteredItem = this.state.viewLayers.filter((layer) =>
+        const filteredItem = this.props.JSONLayers.filter((layer) =>
             layer.toUpperCase().includes(this.state.searchItemRHM.toUpperCase())
         );
         console.log(filteredItem);
@@ -45,9 +44,9 @@ class RightHiddenMenu extends PureComponent {
                 <nav id="rhm-all-layers">
                     {filteredItem.map((layer, index) => {
                         return (
-                            <div key={index}>
+                            <div key={index} onClick={(e) => this.props.handleSelctedLayer(e, layer)} >
                                 <input type="checkbox" />
-                                <span>{layer}</span>
+                                <span >{layer}</span>
                                 <img alt="icon" />
                             </div>
                         );

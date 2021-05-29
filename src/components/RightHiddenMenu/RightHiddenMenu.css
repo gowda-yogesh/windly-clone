@@ -32,13 +32,16 @@
   justify-content: flex-start;
   align-items: center;
   color: aliceblue;
-  padding: 10px 0px;
+}
+
+#rhm-all-layers > div:hover {
+  background-color: brown;
 }
 
 #rhm-all-layers > div > input {
   margin-right: 0.2rem;
 }
 #rhm-all-layers > div > span {
+  padding: 10px 0px;
   margin: 0 0.6rem 0 0.2rem;
 }
-
