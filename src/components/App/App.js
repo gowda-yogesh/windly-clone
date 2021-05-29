@@ -144,14 +144,14 @@ class App extends Component {
             <LeftMenu handleToggleLeftMenu={this.handleToggleLeftMenu}
               menuVisibility={this.state.visible} />
             <Title title="ISTRAC" />
-            <RightVisibleMenu handleToggleRightHM={this.handleToggleRightHM} handleLogin={this.handleLogin} />
+            <RightVisibleMenu handleToggleRightHM={this.handleToggleRightHM} handleLogin={this.handleLogin} JSONLayers={this.state.JSONLayers} handleSelctedLayer={this.handleSelctedLayer} />
             <RightHiddenMenu handleToggleRightHM={this.handleToggleRightHM}
               menuVisibility={this.state.rightHiddenMenuVisible} JSONLayers={this.state.JSONLayers} handleSelctedLayer={this.handleSelctedLayer} />
           </div>
           <DisplayMaps wmsURL={wmsURL} position={position} layerOption={layerOption} text={text} />
         </ErrorBoundry>
       </>
-    );
+    )
   }
 }
 

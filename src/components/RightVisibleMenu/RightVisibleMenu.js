@@ -9,36 +9,21 @@ class RightVisibleMenu extends Component {
                     Icon Login
                 </div>
                 <nav id="overlay" className="menu iconsize-7">
-                    <a href="www.google.com" >
-                        <div>Radar &amp; Satellite</div>
-                        <div >O</div>
-                    </a>
-                    <a href="www.google.com" >
-                        <div>Radar &amp; Satellite</div>
-                        <div >O</div>
-                    </a>
-                    <a href="www.google.com" >
-                        <div>Radar &amp; Satellite</div>
-                        <div >O</div>
-                    </a>
-                    <a href="www.google.com" >
-                        <div>Radar &amp; Satellite rkjklwjliojij;oij;oji</div>
-                        <div >O</div>
-                    </a>
-                    <a href="www.google.com" >
-                        <div>Radar &amp; Satellite esfwrkkjoerkjtolejiwriltjwelirjt</div>
-                        <div >O</div>
-                    </a>
-                    <a href="www.google.com" >
-                        <div>Radar &amp; Satellite</div>
-                        <div >O</div>
-                    </a>
-                    <a href="#" onMouseDown={this.props.handleToggleRightHM} >
-                        <div>Mor jhgujhfgvyujfvtyfvtycftrctre </div>
-                        <div >^</div>
-                    </a>
+                    {this.props.JSONLayers.map((layer, index) => {
+                        return (
+                            <div key={index} onClick={(e) => this.props.handleSelctedLayer(e, layer)} >
+                                <div >{layer}</div>
+                                <div >O</div>
+                            </div>
 
+                        );
+                    })}
+                    <div onMouseDown={this.props.handleToggleRightHM} >
+                        <div>More</div>
+                        <div >{`>`}</div>
+                    </div>
                 </nav>
+
             </div>
         );
     }

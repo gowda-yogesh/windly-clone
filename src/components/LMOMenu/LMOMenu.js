@@ -5,13 +5,13 @@ class LMOMenu extends Component {
     render() {
         return (
             <div>
-                <div className="lmo-sub-options"> image <p>   Wind Paramentrs</p></div>
-                <div className="lmo-sub-options"> image <p>   Wind Paramentrs</p></div>
-                <div className="lmo-sub-options"> image <p>   Wind Paramentrs</p></div>
-                <div className="lmo-sub-options"> image <p>   Wind Paramentrs</p></div>
-                <div className="lmo-sub-options"> image <p>   Wind Paramentrs</p></div>
-                <div className="lmo-sub-options"> image <p>   Wind Paramentrs</p></div>
-                <div className="lmo-sub-options"> image <p>   Wind Paramentrs</p></div>
+                <div className="lmo-sub-options"> <p>   Wind Paramentrs</p></div>
+                <div className="lmo-sub-options"> <p>   Wind Paramentrs</p></div>
+                <div className="lmo-sub-options"> <p>   Wind Paramentrs</p></div>
+                <div className="lmo-sub-options"> <p>   Wind Paramentrs</p></div>
+                <div className="lmo-sub-options"> <p>   Wind Paramentrs</p></div>
+                <div className="lmo-sub-options"> <p>   Wind Paramentrs</p></div>
+                <div className="lmo-sub-options"> <p>   Wind Paramentrs</p></div>
             </div>
         );
     }

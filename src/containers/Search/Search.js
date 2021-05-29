@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = ({ handleSearch, className, style }) => {
+const Search = ({ handleSearch, className, style, searchPlaceHolder }) => {
     return (
         <input
             style={{
@@ -10,7 +10,7 @@ const Search = ({ handleSearch, className, style }) => {
             }}
             type="search"
             onChange={handleSearch}
-            placeholder="Search layers... "
+            placeholder={searchPlaceHolder || "Search layers... "}
             className={className}
         />
     )

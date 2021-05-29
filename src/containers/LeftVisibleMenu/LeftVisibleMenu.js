@@ -34,7 +34,7 @@ class MenuButton extends Component {
             <div id="lvm-container">
                 <div id="lvm-button-search">
                     <MenuIcon id="lvm-show-button" onMouseDown={this.props.handleToggleLeftMenu} />
-                    <Search handleSearch={this.handleSearchHomePage} className="lvm-search-bar" />
+                    <Search handleSearch={this.handleSearchHomePage} className="lvm-search-bar"searchPlaceHolder="search location..." />
                 </div >
                 <nav id="lvm-search-location-results">
                     {filteredItem.map((coordinate, index) => {
@@ -42,7 +42,7 @@ class MenuButton extends Component {
                             <div key={index} data-location={coordinate.location} >
                                 <span onClick={this.props.handleSelectedLocation}>{coordinate.location}</span>
                             </div>
-                        );
+                        )
                     })}
                 </nav>
             </div>

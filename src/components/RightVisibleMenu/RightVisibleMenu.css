@@ -26,7 +26,7 @@
   flex-direction: column;
 }
 
-#overlay > a {
+#overlay > div {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -35,21 +35,21 @@
   color: #ffffff;
 }
 
-#overlay > a:hover {
+#overlay > div:hover {
   background-color: rgba(68, 65, 65, 0.84);
 }
 
-/* #overlay > a:first-of-type > div:nth-child(2) {
+/* #overlay > div:first-of-type > div:nth-child(2) {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
 
-#overlay > a:last-of-type > div:nth-child(2) {
+#overlay > div:last-of-type > div:nth-child(2) {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 } */
 
-#overlay > a > div:nth-child(1) {
+#overlay > div > div:nth-child(1) {
   width: 60%;
   font-size: 14px;
   padding: 0.3rem 0.3rem 0.3rem 0.3rem;
@@ -64,7 +64,7 @@
   
 }
 
-#overlay > a > div:nth-child(2) {
+#overlay > div > div:nth-child(2) {
   width: 12px;
   align-self: center;
   justify-self: center;
