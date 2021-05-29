@@ -8,6 +8,7 @@ import LeftVisibleMenu from "../../containers/LeftVisibleMenu/LeftVisibleMenu"
 import LeftMenu from "../LeftMenu/LeftMenu"
 import RightVisibleMenu from "../RightVisibleMenu/RightVisibleMenu";
 import RightHiddenMenu from "../RightHiddenMenu/RightHiddenMenu"
+import DisplayMaps from "../DisplayMap/DisplayMap.js"
 // import ISROLogo from "../../assets/ISRO-logo.png"
 
 
@@ -23,7 +24,7 @@ class App extends Component {
         location: "Bangalore",
         coordinates: [12.9716, 77.5946]
       },
-      selectedLayer: "SRTM30-Colored-Hillshade",
+      selectedLayer: "TOPO-WMS",
       JSONLocationLatLon: [
         {
           location: "Bangalore",
@@ -116,7 +117,10 @@ class App extends Component {
   handleSelctedLayer = (e, layer) => {
     console.log(e.target);
     console.log(layer);
-    this.setState({ selectedLayer: layer }, function () {
+    this.setState({
+      selectedLayer: layer,
+      wmsURL: "http://ows.mundialis.de/services/service?"
+    }, function () {
       console.log(" App.js - Selected Layer=\t", this.state.selectedLayer)
       // window.location.reload(false)
     })
@@ -130,13 +134,7 @@ class App extends Component {
     const { location, coordinates } = this.state.selectedLocationData;
     const position = coordinates;
     const text = location;
-    const center = position
-    // const wmsURL = "http://ows.mundialis.de/services/service?";
-    // const position = [13.0827, 80.2707];
-    // const layerOption = "TOPO-OSM-WMS";
-    // const wmsURL2 =
-    //   "https://thredds.socib.es/thredds/wms/observational/hf_radar/hf_radar_ibiza-scb_codarssproc001_L1_agg/hf_radar_ibiza-scb_codarssproc001_L1_agg_best.ncd";
-    // const layerOption2 = "sea_water_velocity";
+
 
     return (
       <>
@@ -150,46 +148,7 @@ class App extends Component {
             <RightHiddenMenu handleToggleRightHM={this.handleToggleRightHM}
               menuVisibility={this.state.rightHiddenMenuVisible} JSONLayers={this.state.JSONLayers} handleSelctedLayer={this.handleSelctedLayer} />
           </div>
-          <div id="map-container">
-            <MapContainer
-              center={position}
-              zoom={6}
-              scrollWheelZoom={true}
-            >
-              <WMSTileLayer url={wmsURL} layers={layerOption}></WMSTileLayer>
-              <Marker position={position}>
-                <Popup>
-                  {text}
-                </Popup>
-              </Marker>
-            </MapContainer>
-            {/* <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
-              <LayersControl position="topright">
-                <LayersControl.BaseLayer checked name="OpenStreetMap.Mapnik">
-                  <TileLayer
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                </LayersControl.BaseLayer>
-
-                <LayersControl.Overlay checked name="Layer group with circles">
-                  <LayerGroup>
-                    <Circle
-                      center={center}
-                      pathOptions={{ fillColor: 'blue' }}
-                      radius={400}
-                    />
-                    <Circle
-                      center={center}
-                      pathOptions={{ fillColor: 'red' }}
-                      radius={100}
-                      stroke={false}
-                    />
-                  </LayerGroup>
-                </LayersControl.Overlay>
-              </LayersControl>
-            </MapContainer>, */}
-          </div>
+          <DisplayMaps wmsURL={wmsURL} position={position} layerOption={layerOption} text={text} />
         </ErrorBoundry>
       </>
     );
