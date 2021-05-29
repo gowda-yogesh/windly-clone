@@ -8,9 +8,8 @@ class MenuButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            locationLonLat: ["Bangalore", "W", "R", "wearwr", "aaaaa"],
+            allCoordinates: this.props.JSONLocationLatLon,
             searchItemHomePage: "XXXXXXXXXX",
-
         }
     }
 
@@ -24,8 +23,8 @@ class MenuButton extends Component {
     render() {
         let filteredItem = []
         if (this.state.searchItemHomePage) {
-            filteredItem = this.state.locationLonLat.filter((location) =>
-                location.toUpperCase().includes(this.state.searchItemHomePage.toUpperCase()));
+            filteredItem = this.state.allCoordinates.filter((coordinate) =>
+                coordinate.location.toUpperCase().includes(this.state.searchItemHomePage.toUpperCase()));
         }
         console.log(filteredItem);
 
@@ -38,10 +37,10 @@ class MenuButton extends Component {
                     <Search handleSearch={this.handleSearchHomePage} className="lvm-search-bar" />
                 </div >
                 <nav id="lvm-search-location-results">
-                    {filteredItem.map((location, index) => {
+                    {filteredItem.map((coordinate, index) => {
                         return (
-                            <div key={index} data-location={location} >
-                                <span onClick={this.props.handleSelectedLocation}>{location}</span>
+                            <div key={index} data-location={coordinate.location} >
+                                <span onClick={this.props.handleSelectedLocation}>{coordinate.location}</span>
                             </div>
                         );
                     })}

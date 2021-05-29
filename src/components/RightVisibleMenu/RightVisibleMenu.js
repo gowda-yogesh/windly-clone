@@ -34,9 +34,10 @@ class RightVisibleMenu extends Component {
                         <div >O</div>
                     </a>
                     <a href="#" onMouseDown={this.props.handleToggleRightHM} >
-                        <div>More </div>
+                        <div>Mor jhgujhfgvyujfvtyfvtycftrctre </div>
                         <div >^</div>
                     </a>
+
                 </nav>
             </div>
         );

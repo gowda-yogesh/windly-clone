@@ -84,6 +84,5 @@
 
 #lvm-search-location-results > div > span:hover {
   width: 100%;
-
-  background-color: rgba(255, 255, 255, 0.28);
+  background-color: rgba(68, 65, 65, 0.6);
 }

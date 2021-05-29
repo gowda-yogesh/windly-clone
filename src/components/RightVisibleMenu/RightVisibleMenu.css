@@ -35,7 +35,7 @@
   color: #ffffff;
 }
 
-#overlay > a :hover {
+#overlay > a:hover {
   background-color: rgba(68, 65, 65, 0.84);
 }
 
